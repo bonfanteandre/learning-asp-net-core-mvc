@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Product</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Product" asp-action="Upsert" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i>
+                Create new product
+            </a>
+        </div>
+    </div>
+</div>
+
+<partial name="_Notification" />
+
+<table id="productsTable" class="table table-bordered table-striped" style="width: 100%">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>IBSN</th>
+            <th>Price</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+    </thead>
+    
+</table>
+
+@section Scripts {
+    <script src="~/js/product.js"></script>
+}
